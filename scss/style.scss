@@ -71,7 +71,7 @@ main{
     top: 13rem;
   }
   to{
-    top: 15rem;
+    top: 14rem;
   }
 }
 
@@ -79,7 +79,7 @@ div#bounce {
   color: #fff;
   font-size: 3rem;
   position: absolute;
-  animation: bounce 0.5s alternate infinite ease;
+  animation: bounce 0.8s alternate infinite ease;
   transition: opacity 0.3s ease;
 
   &.hidden {
