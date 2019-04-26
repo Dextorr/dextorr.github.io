@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const skill = document.createElement('div')
     skill.innerHTML = `
       <p><span>${icon.name.charAt(0)}</span>${icon.name.substr(1)}</p>
-      <img src="${icon.icon}" alt="${icon.name}" />
     `
+    skill.style.backgroundImage = `url(${icon.icon})`
     skill.classList.add('icon')
     iconDiv.appendChild(skill)
   })

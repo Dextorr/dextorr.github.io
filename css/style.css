@@ -106,28 +106,42 @@ div.filter {
 
 section#skills {
   justify-content: flex-start; }
+  section#skills h2 {
+    width: 100%;
+    text-align: center; }
+    section#skills h2 span {
+      color: #f00; }
   section#skills #devIcons {
     display: flex;
     flex-wrap: wrap;
     width: 60%;
+    height: 100%;
     justify-content: center; }
     section#skills #devIcons .icon {
       width: 11%;
-      margin: 3%; }
+      margin: 3%;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+      background-repeat: no-repeat; }
       section#skills #devIcons .icon p {
-        position: relative;
         font-size: 1.1rem;
-        top: 50%;
         text-align: center;
         opacity: 0;
-        text-shadow: 0px 0px 10px #fff; }
+        background: #fff;
+        border-radius: 4px;
+        padding: 4px; }
         section#skills #devIcons .icon p span {
           color: #f00; }
-      section#skills #devIcons .icon p, section#skills #devIcons .icon img {
+      section#skills #devIcons .icon p {
         transition: opacity 1s ease; }
-      section#skills #devIcons .icon:hover img {
-        opacity: 0; }
       section#skills #devIcons .icon:hover p {
         opacity: 1; }
+  section#skills #softSkills {
+    width: 40%;
+    display: flex;
+    flex-direction: column; }
 
 /*# sourceMappingURL=style.css.map */
