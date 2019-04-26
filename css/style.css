@@ -98,10 +98,36 @@ div.filter {
   left: calc(50vw - 10.5rem);
   background-image: url("../assets/CodeBG.png");
   background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 1;
   filter: blur(3px); }
+
+section#skills {
+  justify-content: flex-start; }
+  section#skills #devIcons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: center; }
+    section#skills #devIcons .icon {
+      width: 11%;
+      margin: 3%; }
+      section#skills #devIcons .icon p {
+        position: relative;
+        font-size: 1.1rem;
+        top: 50%;
+        text-align: center;
+        opacity: 0;
+        text-shadow: 0px 0px 10px #fff; }
+        section#skills #devIcons .icon p span {
+          color: #f00; }
+      section#skills #devIcons .icon p, section#skills #devIcons .icon img {
+        transition: opacity 1s ease; }
+      section#skills #devIcons .icon:hover img {
+        opacity: 0; }
+      section#skills #devIcons .icon:hover p {
+        opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */

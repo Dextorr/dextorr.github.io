@@ -10,6 +10,8 @@ $bgTwo: url('../assets/keyboard.jpg');
   background-size: cover;
 }
 
+// GENERAL *********************************************************************
+
 * {
   box-sizing: border-box;
 }
@@ -46,6 +48,8 @@ header{
     }
   }
 }
+
+// BODY ************************************************************************
 
 main{
 
@@ -111,6 +115,8 @@ main{
   }
 }
 
+// ANIMATION *******************************************************************
+
 @keyframes bounce {
   from{
     top: 13rem;
@@ -139,6 +145,8 @@ a {
   }
 }
 
+// FILTER DIV ******************************************************************
+
 div.filter {
   position: absolute;
   background: #fff;
@@ -147,10 +155,53 @@ div.filter {
   top: 85vh;
   left: calc(50vw - 10.5rem);
   background-image: $bgOne;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  @include fixed-background();
   z-index: 1;
   filter: blur(3px);
+}
+
+// DEV ICONS *******************************************************************
+
+section#skills {
+  justify-content: flex-start;
+
+  #devIcons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: center;
+
+    .icon {
+      width: 11%;
+      margin: 3%;
+
+      p {
+        position: relative;
+        font-size: 1.1rem;
+        top: 50%;
+        text-align: center;
+        opacity: 0;
+        text-shadow: 0px 0px 10px #fff;
+
+        span {
+          color: #f00;
+        }
+      }
+
+      p, img {
+        transition: opacity 1s ease;
+      }
+
+      &:hover {
+
+        img {
+          opacity: 0;
+        }
+
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
