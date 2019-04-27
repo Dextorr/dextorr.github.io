@@ -190,6 +190,8 @@ section#skills {
       align-items: center;
       background-position: center;
       background-repeat: no-repeat;
+      transition: opacity 1s ease;
+      opacity: 0;
 
       p {
         font-size: 1.1rem;
@@ -223,6 +225,13 @@ section#skills {
     width: 40%;
     display: flex;
     flex-direction: column;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      font-size: 1.2rem;
+    }
   }
 
 }

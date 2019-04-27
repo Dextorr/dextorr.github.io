@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const arrow = document.getElementById('cta')
   const content = document.getElementById('contentStart')
   const iconDiv = document.getElementById('devIcons')
+  const skillDiv = document.querySelector('#softSkills ul')
+  const skills = []
   const icons = [
     {name: 'HTML5', icon: 'assets/devicons/html5/html5-plain.svg'},
     {name: 'CSS3', icon: 'assets/devicons/css3/css3-plain.svg'},
@@ -24,6 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
     {name: 'Python', icon: 'assets/devicons/python/python-plain.svg'},
     {name: 'PostgreSQL', icon: 'assets/devicons/postgresql/postgresql-plain.svg'}
   ]
+  const softSkills = [
+    'Confident Touch Typist',
+    'Logical Problem Solving',
+    'Communication Ability',
+    'Collaboration and Teamwork',
+    'Time Management',
+    'Organisational Ability'
+  ]
+
+  function setOpacity(element, bool){
+    element.style.opacity = `${bool? 1:0}`
+  }
 
   icons.forEach(icon => {
     const skill = document.createElement('div')
@@ -32,12 +46,39 @@ document.addEventListener('DOMContentLoaded', () => {
     `
     skill.style.backgroundImage = `url(${icon.icon})`
     skill.classList.add('icon')
+    skills.push(skill)
     iconDiv.appendChild(skill)
   })
 
+  softSkills.forEach(softSkill => {
+    const li = document.createElement('li')
+    li.innerText = softSkill
+    skillDiv.appendChild(li)
+  })
+
   document.addEventListener('scroll', () => {
+
+    console.log(document.documentElement.scrollTop, content.offsetTop)
+
     if (document.documentElement.scrollTop > 100) arrow.classList.add('hidden')
     else arrow.classList.remove('hidden')
+
+    if (content.offsetTop <= document.documentElement.scrollTop) {
+      console.log('scrolled')
+      let i = 0
+      const animationTimer = setInterval(() => {
+        if(i<skills.length){
+          setOpacity(skills[i], true)
+        } else {
+          clearInterval(animationTimer)
+        }
+        i++
+        if (content.offsetTop > document.documentElement.scrollTop){
+          clearInterval(animationTimer)
+          skills.forEach(skill => setOpacity(skill, false))
+        }
+      }, 100)
+    } else (skills.forEach(skill => setOpacity(skill, false)))
   })
 
   arrow.addEventListener('click', () => {
