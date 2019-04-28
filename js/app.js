@@ -66,19 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (content.offsetTop <= document.documentElement.scrollTop) {
       console.log('scrolled')
       let i = 0
-      const animationTimer = setInterval(() => {
+      const iconAnimationTimer = setInterval(() => {
+        if (document.documentElement.scrollTop < 10) i = skills.length
         if(i<skills.length){
           setOpacity(skills[i], true)
         } else {
-          clearInterval(animationTimer)
+          clearInterval(iconAnimationTimer)
         }
         i++
-        if (content.offsetTop > document.documentElement.scrollTop){
-          clearInterval(animationTimer)
-          skills.forEach(skill => setOpacity(skill, false))
-        }
-      }, 100)
-    } else (skills.forEach(skill => setOpacity(skill, false)))
+      }, 50)
+    } else if (document.documentElement.scrollTop < 10) {
+      skills.forEach(skill => setOpacity(skill, false))
+    }
   })
 
   arrow.addEventListener('click', () => {

@@ -65,11 +65,35 @@ main section {
           width: 90%;
           margin: auto;
           height: 90%;
-          background: rgba(169, 169, 169, 0.6);
+          background: rgba(169, 169, 169, 0.9);
           border-radius: 2rem;
           display: flex;
           flex-direction: column;
           align-items: center; }
+          main section#projects .project-container .project .project-content .project-description {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start; }
+            main section#projects .project-container .project .project-content .project-description .project-image {
+              width: 55%; }
+              main section#projects .project-container .project .project-content .project-description .project-image img {
+                width: 100%; }
+            main section#projects .project-container .project .project-content .project-description p {
+              width: 40%; }
+        main section#projects .project-container .project .project-links {
+          width: 80%;
+          margin: auto;
+          display: flex;
+          justify-content: space-around; }
+          main section#projects .project-container .project .project-links a {
+            width: 4rem;
+            transition: transform 0.5s ease; }
+            main section#projects .project-container .project .project-links a:hover {
+              transform: scale(1.2); }
+            main section#projects .project-container .project .project-links a img {
+              width: 100%; }
 
 @keyframes bounce {
   from {
@@ -105,12 +129,12 @@ div.filter {
   filter: blur(3px); }
 
 section#skills {
-  justify-content: flex-start; }
+  justify-content: space-between; }
   section#skills h2 {
     width: 100%;
-    text-align: center; }
-    section#skills h2 span {
-      color: #f00; }
+    text-align: center;
+    color: #fff;
+    text-decoration: underline; }
   section#skills #devIcons {
     display: flex;
     flex-wrap: wrap;
@@ -142,13 +166,20 @@ section#skills {
       section#skills #devIcons .icon:hover p {
         opacity: 1; }
   section#skills #softSkills {
-    width: 40%;
+    width: 35%;
+    height: 100%;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    justify-content: space-between; }
+    section#skills #softSkills p {
+      margin: 0;
+      color: #fff;
+      font-size: 0.8rem; }
     section#skills #softSkills ul {
       list-style: none;
       padding: 0;
       text-align: center;
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
