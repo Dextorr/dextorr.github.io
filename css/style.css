@@ -77,9 +77,10 @@ main section {
             justify-content: space-around;
             align-items: flex-start; }
             main section#projects .project-container .project .project-content .project-description .project-image {
-              width: 55%; }
+              width: 45%; }
               main section#projects .project-container .project .project-content .project-description .project-image img {
-                width: 100%; }
+                width: 100%;
+                border-radius: 10px; }
             main section#projects .project-container .project .project-content .project-description p {
               width: 40%; }
         main section#projects .project-container .project .project-links {
@@ -129,7 +130,7 @@ div.filter {
   filter: blur(3px); }
 
 section#skills {
-  justify-content: space-between; }
+  justify-content: space-around; }
   section#skills h2 {
     width: 100%;
     text-align: center;

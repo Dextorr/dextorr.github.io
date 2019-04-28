@@ -119,10 +119,11 @@ main{
               align-items: flex-start;
 
               .project-image {
-                width: 55%;
+                width: 45%;
 
                 img {
                   width: 100%;
+                  border-radius: 10px;
                 }
               }
 
@@ -205,7 +206,7 @@ div.filter {
 // DEV ICONS *******************************************************************
 
 section#skills {
-  justify-content: space-between;
+  justify-content: space-around;
 
   h2 {
     width: 100%;
