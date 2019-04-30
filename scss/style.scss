@@ -49,6 +49,14 @@ header{
   }
 }
 
+a {
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
 // BODY ************************************************************************
 
 main{
@@ -63,6 +71,10 @@ main{
 
     &.content {
       height: 90vh;
+    }
+
+    &#projects {
+      height: 80vh;
     }
 
     &#top {
@@ -88,11 +100,31 @@ main{
       .project-container {
         width: 100vw;
         overflow-x: scroll;
+        scroll-behavior: smooth;
         display: flex;
         height: 100%;
         align-items: center;
         scroll-snap-type: x mandatory;
         scroll-snap-points-x: repeat(100vw);
+
+        .arrow {
+          color: #fff;
+          font-size: 2rem;
+          position: absolute;
+          height: 90vh;
+          display: flex;
+          align-items: center;
+          padding: 0 1rem;
+
+          &.left {
+            left: 0;
+            opacity: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
 
         .project {
           scroll-snap-align: center;
@@ -143,10 +175,6 @@ main{
               width: 4rem;
               transition: transform 0.5s ease;
 
-              &:hover {
-                transform: scale(1.2);
-              }
-
               img {
                 width: 100%;
               }
@@ -169,13 +197,31 @@ main{
   }
 }
 
+@keyframes bounceRight {
+  from{
+    right: 0rem;
+  }
+  to{
+    right: 0.5rem;
+  }
+}
+
+@keyframes bounceLeft {
+  from{
+    left: 0rem;
+  }
+  to{
+    left: 0.5rem;
+  }
+}
+
 a {
   text-decoration: none;
 
   &#cta {
     position: absolute;
     animation: bounce 0.8s alternate infinite ease;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
 
     &.hidden {
@@ -284,6 +330,43 @@ section#skills {
     }
   }
 
+}
+
+div.arrow {
+  cursor: pointer;
+
+  &.right:hover {
+    animation: bounceRight 0.8s alternate infinite ease;
+  }
+
+  &.left:hover {
+    animation: bounceLeft 0.8s alternate infinite ease;
+  }
+}
+
+// FOOTER **********************************************************************
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  height: 10vh;
+
+  div.contact-icons{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  p {
+    align-self: flex-end;
+    margin: 7px 3rem;
+  }
 }
 
 // MEDIA QUERIES ***************************************************************
