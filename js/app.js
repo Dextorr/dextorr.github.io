@@ -92,10 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   projectContainer.addEventListener('scroll', () => {
-    if (projectContainer.scrollLeft <= 1000) projectArrows[0].style.opacity = '0'
-    else projectArrows[0].style.opacity = '1'
-    if (projectContainer.scrollLeft >= 6000) projectArrows[1].style.opacity = '0'
-    else projectArrows[1].style.opacity = '1'
+    if (projectContainer.scrollLeft <= 1000) {
+      projectArrows[0].style.opacity = '0'
+      projectArrows[0].style.pointerEvents = 'none'
+    } else {
+      projectArrows[0].style.opacity = '1'
+      projectArrows[0].style.pointerEvents = 'auto'
+    }
+    if (projectContainer.scrollLeft >= 6000) {
+      projectArrows[1].style.opacity = '0'
+      projectArrows[1].style.pointerEvents = 'none'
+    } else {
+      projectArrows[1].style.opacity = '1'
+      projectArrows[1].style.pointerEvents = 'auto'
+    }
   })
 
   arrow.addEventListener('click', () => {
