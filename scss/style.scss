@@ -253,6 +253,8 @@ div.filter {
 
 section#skills {
   justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
 
   h2 {
     width: 100%;
@@ -308,18 +310,20 @@ section#skills {
 
   // SOFT SKILLS ***************************************************************
 
-  #softSkills {
-    width: 35%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  #aboutMe {
+    height: 50%;
+    width: 30%;
 
     p {
       margin: 0;
       color: #fff;
       font-size: 0.8rem;
     }
+  }
+
+  #softSkills {
+    height: 50%;
+    width: 30%;
 
     ul {
       list-style: none;
@@ -329,7 +333,6 @@ section#skills {
       color: #fff;
     }
   }
-
 }
 
 div.arrow {
@@ -371,6 +374,102 @@ footer {
 
 // MEDIA QUERIES ***************************************************************
 
-@media only screen and (max-width: 420px){
+@media only screen and (max-width: 640px){
 
+
+  main {
+
+    section {
+
+      &#top {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &#skills {
+        background: #424242;
+        height: auto;
+
+        #devIcons {
+          width: 100%;
+          height: 50%;
+
+          .icon {
+            width: 20%;
+            margin: 0 0 3rem;
+            padding-bottom: 2rem;
+            background-size: 3rem;
+            background-position: top;
+
+            p {
+              opacity: 1;
+              position: relative;
+              top: 3.5rem;
+              font-size: 1rem;
+            }
+          }
+        }
+
+        #softSkills {
+          flex-direction: row;
+          width: 100%;
+          height: 50%;
+          order: 1;
+        }
+
+        #aboutMe {
+          width: 90%;
+          height: 50%;
+          margin: 5%;
+          order: 2;
+
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &#projects {
+
+        .project-container {
+
+          .project {
+
+            .project-content {
+
+              h1, h2 {
+                text-align: center;
+                margin: 0;
+              }
+
+              h1 {
+                font-size: 1.5rem;
+              }
+
+              h2 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+              }
+
+              .project-description {
+                flex-direction: column;
+
+                .project-image {
+                  width: 80%;
+                  margin: auto;
+                }
+
+                p {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
 }

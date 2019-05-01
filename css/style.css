@@ -159,7 +159,9 @@ div.filter {
   filter: blur(3px); }
 
 section#skills {
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap; }
   section#skills h2 {
     width: 100%;
     text-align: center;
@@ -195,16 +197,16 @@ section#skills {
         transition: opacity 1s ease; }
       section#skills #devIcons .icon:hover p {
         opacity: 1; }
-  section#skills #softSkills {
-    width: 35%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    section#skills #softSkills p {
+  section#skills #aboutMe {
+    height: 50%;
+    width: 30%; }
+    section#skills #aboutMe p {
       margin: 0;
       color: #fff;
       font-size: 0.8rem; }
+  section#skills #softSkills {
+    height: 50%;
+    width: 30%; }
     section#skills #softSkills ul {
       list-style: none;
       padding: 0;
@@ -234,5 +236,54 @@ footer {
   footer p {
     align-self: flex-end;
     margin: 7px 3rem; }
+
+@media only screen and (max-width: 640px) {
+  main section#top img {
+    width: 100%;
+    height: auto; }
+  main section#skills {
+    background: #424242;
+    height: auto; }
+    main section#skills #devIcons {
+      width: 100%;
+      height: 50%; }
+      main section#skills #devIcons .icon {
+        width: 20%;
+        margin: 0 0 3rem;
+        padding-bottom: 2rem;
+        background-size: 3rem;
+        background-position: top; }
+        main section#skills #devIcons .icon p {
+          opacity: 1;
+          position: relative;
+          top: 3.5rem;
+          font-size: 1rem; }
+    main section#skills #softSkills {
+      flex-direction: row;
+      width: 100%;
+      height: 50%;
+      order: 1; }
+    main section#skills #aboutMe {
+      width: 90%;
+      height: 50%;
+      margin: 5%;
+      order: 2; }
+      main section#skills #aboutMe p {
+        font-size: 1rem; }
+  main section#projects .project-container .project .project-content h1, main section#projects .project-container .project .project-content h2 {
+    text-align: center;
+    margin: 0; }
+  main section#projects .project-container .project .project-content h1 {
+    font-size: 1.5rem; }
+  main section#projects .project-container .project .project-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem; }
+  main section#projects .project-container .project .project-content .project-description {
+    flex-direction: column; }
+    main section#projects .project-container .project .project-content .project-description .project-image {
+      width: 80%;
+      margin: auto; }
+    main section#projects .project-container .project .project-content .project-description p {
+      width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
