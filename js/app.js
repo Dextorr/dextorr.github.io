@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const skillDiv = document.querySelector('#softSkills ul')
   const projectContainer = document.querySelector('div.project-container')
   const projectArrows = document.querySelectorAll('div.arrow')
+  const vw = document.documentElement.clientWidth
   const skills = []
   const icons = [
     {name: 'HTML5', icon: 'assets/devicons/html5/html5-plain.svg'},
@@ -92,14 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   projectContainer.addEventListener('scroll', () => {
-    if (projectContainer.scrollLeft <= 1000) {
+    if (projectContainer.scrollLeft < vw) {
       projectArrows[0].style.opacity = '0'
       projectArrows[0].style.pointerEvents = 'none'
     } else {
       projectArrows[0].style.opacity = '1'
       projectArrows[0].style.pointerEvents = 'auto'
     }
-    if (projectContainer.scrollLeft >= 6000) {
+    if (projectContainer.scrollLeft >= 5 * vw) {
       projectArrows[1].style.opacity = '0'
       projectArrows[1].style.pointerEvents = 'none'
     } else {
