@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectContainer = document.querySelector('div.project-container')
   const projectArrows = document.querySelectorAll('div.arrow')
   const vw = document.documentElement.clientWidth
+  const vh = document.documentElement.clientHeight
   const skills = []
   const icons = [
     {name: 'HTML5', icon: 'assets/devicons/html5/html5-plain.svg'},
@@ -30,12 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     {name: 'PostgreSQL', icon: 'assets/devicons/postgresql/postgresql-plain.svg'}
   ]
   const softSkills = [
-    'Confident Touch Typist',
     'Logical Problem Solving',
     'Communication Ability',
     'Collaboration and Teamwork',
     'Time Management',
-    'Organisational Ability'
+    'Organisational Ability',
+    'Confident Touch Typist'
   ]
 
   function setOpacity(element, bool){
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.documentElement.scrollTop > 100) arrow.classList.add('hidden')
     else arrow.classList.remove('hidden')
 
-    if (content.offsetTop <= document.documentElement.scrollTop) {
+    if (content.offsetTop - vh/6 <= document.documentElement.scrollTop) {
       console.log('scrolled')
       let i = 0
       const iconAnimationTimer = setInterval(() => {
