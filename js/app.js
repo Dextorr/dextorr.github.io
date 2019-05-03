@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
     arrow.addEventListener('click', () => {
       console.log(projectContainer.scrollLeft)
       if (arrow.classList.contains('right')){
-        projectContainer.scrollLeft += 1000
-      } else projectContainer.scrollLeft -= 1000
+        projectContainer.scrollLeft += vw
+      } else projectContainer.scrollLeft -= vw
     })
   })
 

@@ -61,8 +61,7 @@ main section {
       display: flex;
       height: 100%;
       align-items: center;
-      scroll-snap-type: x mandatory;
-      scroll-snap-points-x: repeat(100vw); }
+      scroll-snap-type: x mandatory; }
       main section#projects .project-container .arrow {
         color: #fff;
         font-size: 2rem;
@@ -81,7 +80,8 @@ main section {
         flex-basis: 100vw;
         flex-shrink: 0;
         height: 100%;
-        display: flex; }
+        display: flex;
+        scroll-snap-align: center; }
         main section#projects .project-container .project .project-content {
           width: 90%;
           margin: auto;
@@ -285,5 +285,13 @@ footer {
       margin: auto; }
     main section#projects .project-container .project .project-content .project-description p {
       width: 100%; } }
+@media only screen and (max-width: 500px) {
+  main section#skills #devIcons {
+    width: 95%; }
+    main section#skills #devIcons .icon {
+      width: 25%; }
+
+  .icon {
+    width: 25%; } }
 
 /*# sourceMappingURL=style.css.map */

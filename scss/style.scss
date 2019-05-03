@@ -105,7 +105,6 @@ main{
         height: 100%;
         align-items: center;
         scroll-snap-type: x mandatory;
-        scroll-snap-points-x: repeat(100vw);
 
         .arrow {
           color: #fff;
@@ -132,6 +131,7 @@ main{
           flex-shrink: 0;
           height: 100%;
           display: flex;
+          scroll-snap-align: center;
 
           .project-content {
             width: 90%;
@@ -374,6 +374,9 @@ footer {
 
 // MEDIA QUERIES ***************************************************************
 
+
+// TABLETS *************
+
 @media only screen and (max-width: 800px){
 
 
@@ -471,5 +474,32 @@ footer {
       }
     }
 
+  }
+}
+
+// PHONES *************
+
+@media only screen and (max-width: 500px){
+
+  main {
+
+    section {
+
+
+      &#skills {
+
+        #devIcons {
+          width: 95%;
+
+          .icon {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+
+  .icon {
+    width: 25%;
   }
 }
