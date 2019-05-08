@@ -69,12 +69,17 @@ main section {
         height: 90vh;
         display: flex;
         align-items: center;
-        padding: 0 1rem; }
+        padding: 0 1rem;
+        cursor: pointer; }
         main section#projects .project-container .arrow.left {
           left: 0;
           opacity: 0; }
+          main section#projects .project-container .arrow.left:hover {
+            animation: bounceLeft 0.8s alternate infinite ease; }
         main section#projects .project-container .arrow.right {
           right: 0; }
+          main section#projects .project-container .arrow.right:hover {
+            animation: bounceRight 0.8s alternate infinite ease; }
       main section#projects .project-container .project {
         scroll-snap-align: center;
         flex-basis: 100vw;
@@ -198,28 +203,21 @@ section#skills {
       section#skills #devIcons .icon:hover p {
         opacity: 1; }
   section#skills #aboutMe {
-    height: 50%;
-    width: 30%; }
+    max-height: 65%;
+    width: 35%; }
     section#skills #aboutMe p {
       margin: 0;
       color: #fff;
       font-size: 0.8rem; }
   section#skills #softSkills {
-    height: 50%;
-    width: 30%; }
+    height: 30%;
+    width: 35%; }
     section#skills #softSkills ul {
       list-style: none;
       padding: 0;
       text-align: center;
       font-size: 1.2rem;
       color: #fff; }
-
-div.arrow {
-  cursor: pointer; }
-  div.arrow.right:hover {
-    animation: bounceRight 0.8s alternate infinite ease; }
-  div.arrow.left:hover {
-    animation: bounceLeft 0.8s alternate infinite ease; }
 
 footer {
   display: flex;
@@ -265,7 +263,7 @@ footer {
       order: 1; }
     main section#skills #aboutMe {
       width: 90%;
-      height: 50%;
+      max-height: 50%;
       margin: 5%;
       order: 2; }
       main section#skills #aboutMe p {
@@ -290,8 +288,19 @@ footer {
     width: 95%; }
     main section#skills #devIcons .icon {
       width: 25%; }
+  main section#projects .project-container {
+    height: auto; }
+    main section#projects .project-container .project .project-links a {
+      width: 3rem; }
 
   .icon {
-    width: 25%; } }
+    width: 25%; }
+
+  footer div.contact-icons img {
+    width: 30px; }
+  footer p {
+    font-size: 0.7rem;
+    align-self: center;
+    margin: 0 5px; } }
 
 /*# sourceMappingURL=style.css.map */

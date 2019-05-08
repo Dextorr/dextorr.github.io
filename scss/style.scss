@@ -114,14 +114,23 @@ main{
           display: flex;
           align-items: center;
           padding: 0 1rem;
+          cursor: pointer;
 
           &.left {
             left: 0;
             opacity: 0;
+
+            &:hover {
+              animation: bounceLeft 0.8s alternate infinite ease;
+            }
           }
 
           &.right {
             right: 0;
+
+            &:hover {
+              animation: bounceRight 0.8s alternate infinite ease;
+            }
           }
         }
 
@@ -311,8 +320,8 @@ section#skills {
   // SOFT SKILLS ***************************************************************
 
   #aboutMe {
-    height: 50%;
-    width: 30%;
+    max-height: 65%;
+    width: 35%;
 
     p {
       margin: 0;
@@ -322,8 +331,8 @@ section#skills {
   }
 
   #softSkills {
-    height: 50%;
-    width: 30%;
+    height: 30%;
+    width: 35%;
 
     ul {
       list-style: none;
@@ -332,18 +341,6 @@ section#skills {
       font-size: 1.2rem;
       color: #fff;
     }
-  }
-}
-
-div.arrow {
-  cursor: pointer;
-
-  &.right:hover {
-    animation: bounceRight 0.8s alternate infinite ease;
-  }
-
-  &.left:hover {
-    animation: bounceLeft 0.8s alternate infinite ease;
   }
 }
 
@@ -424,7 +421,7 @@ footer {
 
         #aboutMe {
           width: 90%;
-          height: 50%;
+          max-height: 50%;
           margin: 5%;
           order: 2;
 
@@ -496,10 +493,42 @@ footer {
           }
         }
       }
+
+      &#projects {
+
+        .project-container {
+          height: auto;
+
+          .project {
+            .project-links {
+
+              a {
+                width: 3rem;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
   .icon {
     width: 25%;
+  }
+
+  footer {
+
+    div.contact-icons {
+
+      img {
+        width: 30px;
+      }
+    }
+
+    p {
+      font-size: 0.7rem;
+      align-self: center;
+      margin: 0 5px;
+    }
   }
 }
