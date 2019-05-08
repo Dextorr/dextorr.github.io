@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   projectArrows.forEach(arrow => {
-    arrow.addEventListener('click', () => {
+    arrow.addEventListener('click', (e) => {
+      e.preventDefault()
       console.log(projectContainer.scrollLeft)
       if (arrow.classList.contains('right')){
         projectContainer.scrollLeft += vw
@@ -110,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  arrow.addEventListener('click', () => {
+  arrow.addEventListener('click', (e) => {
+    e.preventDefault()
     content.scrollIntoView()
   })
 })

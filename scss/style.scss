@@ -482,6 +482,17 @@ footer {
 
     section {
 
+      &#top{
+        height: 100vh;
+
+        .filter {
+          width: 12.5rem;
+          height: 10vh;
+          top: 88vh;
+          left: calc(50vw - 7.2rem);
+        }
+      }
+
 
       &#skills {
 
