@@ -14,6 +14,8 @@ $bgTwo: url('../assets/keyboard.jpg');
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::-webkit-scrollbar {
@@ -115,6 +117,7 @@ main{
           align-items: center;
           padding: 0 1rem;
           cursor: pointer;
+          user-select: none;
 
           &.left {
             left: 0;
@@ -232,6 +235,7 @@ a {
     animation: bounce 0.8s alternate infinite ease;
     transition: all 0.3s ease;
     cursor: pointer;
+    user-select: none;
 
     &.hidden {
       opacity: 0;

@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Gugi");
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -70,7 +72,8 @@ main section {
         display: flex;
         align-items: center;
         padding: 0 1rem;
-        cursor: pointer; }
+        cursor: pointer;
+        user-select: none; }
         main section#projects .project-container .arrow.left {
           left: 0;
           opacity: 0; }
@@ -141,7 +144,8 @@ a {
     position: absolute;
     animation: bounce 0.8s alternate infinite ease;
     transition: all 0.3s ease;
-    cursor: pointer; }
+    cursor: pointer;
+    user-select: none; }
     a#cta.hidden {
       opacity: 0; }
     a#cta div#bounce {
