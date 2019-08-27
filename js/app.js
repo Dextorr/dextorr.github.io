@@ -1,14 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const arrow = document.getElementById('cta')
-  const content = document.getElementById('contentStart')
-  const iconDiv = document.getElementById('devIcons')
-  const skillDiv = document.querySelector('#softSkills ul')
-  const projectContainer = document.querySelector('div.project-container')
-  const projectArrows = document.querySelectorAll('div.arrow')
-  const vw = document.documentElement.clientWidth
-  const vh = document.documentElement.clientHeight
-  const skills = []
-  const icons = [
+let arrow,
+  content,
+  iconDiv,
+  skillDiv,
+  projectContainer,
+  projectArrows,
+  vw,
+  vh
+const skills = [],
+  icons = [
     {name: 'HTML5', icon: 'assets/devicons/html5/html5-plain.svg'},
     {name: 'CSS3', icon: 'assets/devicons/css3/css3-plain.svg'},
     {name: 'JavaScript', icon: 'assets/devicons/javascript/javascript-plain.svg'},
@@ -29,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {name: 'Trello', icon: 'assets/devicons/trello/trello-plain.svg'},
     {name: 'Python', icon: 'assets/devicons/python/python-plain.svg'},
     {name: 'PostgreSQL', icon: 'assets/devicons/postgresql/postgresql-plain.svg'}
-  ]
-  const softSkills = [
+  ],
+  softSkills = [
     'Logical Problem Solving',
     'Communication Ability',
     'Collaboration and Teamwork',
@@ -39,10 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     'Confident Touch Typist'
   ]
 
-  function setOpacity(element, bool){
-    element.style.opacity = `${bool? 1:0}`
-  }
+function setOpacity(element, bool){
+  element.style.opacity = `${bool? 1:0}`
+}
 
+function addEvents(){
   icons.forEach(icon => {
     const skill = document.createElement('div')
     skill.innerHTML = `
@@ -62,13 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('scroll', () => {
 
-    console.log(document.documentElement.scrollTop, content.offsetTop)
-
     if (document.documentElement.scrollTop > 100) arrow.classList.add('hidden')
     else arrow.classList.remove('hidden')
 
     if (content.offsetTop - vh/6 <= document.documentElement.scrollTop) {
-      console.log('scrolled')
       let i = 0
       const iconAnimationTimer = setInterval(() => {
         if (document.documentElement.scrollTop < 10) i = skills.length
@@ -87,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
   projectArrows.forEach(arrow => {
     arrow.addEventListener('click', (e) => {
       e.preventDefault()
-      console.log(projectContainer.scrollLeft)
       if (arrow.classList.contains('right')){
         projectContainer.scrollLeft += vw
       } else projectContainer.scrollLeft -= vw
@@ -115,4 +111,19 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault()
     content.scrollIntoView()
   })
-})
+}
+
+function init(){
+  arrow = document.getElementById('cta')
+  content = document.getElementById('contentStart')
+  iconDiv = document.getElementById('devIcons')
+  skillDiv = document.querySelector('#softSkills ul')
+  projectContainer = document.querySelector('div.project-container')
+  projectArrows = document.querySelectorAll('div.arrow')
+  vw = document.documentElement.clientWidth
+  vh = document.documentElement.clientHeight
+
+  addEvents()
+}
+
+document.addEventListener('DOMContentLoaded', init)
